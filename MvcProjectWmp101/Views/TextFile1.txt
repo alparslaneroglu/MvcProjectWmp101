@@ -1,0 +1,11 @@
+﻿Zen Coding ornekleri
+
+razor view engine 
+
+razor syntax
+
+razor ile karar yapıları
+
+extensionlar kullanılarak HtmlHelper - TagHelper - UrlHelper
+
+Kendi extension larımızı yazarak html ve tag helper lar oluşturacağız.
