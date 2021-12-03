@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Selam Nasilsin?
+<!--html yorum satırı-->
+@*Deneme*@
+
+@{
+    //deneme
+
+
+    string name = "Alparslan";
+    string lastName = "EROGLU";
+    string nameLastName = name + " " + lastName;
+
+    <ul>
+        <li>@name</li>
+        <li>@lastName</li>
+        <li>@nameLastName</li>
+    </ul>
+
+}
+
+@name
+<br />
+@lastName
+<br />
+@nameLastName
+
+<br />  
+<br />
+@(name + " " + lastName)

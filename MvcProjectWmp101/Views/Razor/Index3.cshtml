@@ -1,0 +1,43 @@
+﻿@using MvcProjectWmp101.Library
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Index3</h2>
+
+<input type="text" value="" id="text1" name="text1" />
+<br />
+<input type="button" value="Buna Tıkla" id="btn01" name="btn01" />
+<br />
+<a href="/Razor/Index" type="button">Razor Index</a>
+<br />
+<a href="/Home/Index" type="button" class="btn btn-success">Home Index</a>
+<br />
+
+<br />
+@*Html Helper Yapısıdır. Yukarıdaki "<a href="/Home/Index" type="button" class="btn btn-success">Home Index</a>" yapısı html kodudur.Fakat bu c# kodudur.  *@
+
+@Html.ActionLink("Index sayfasina git", "Index", "Razor", null, new { @class = "btn btn-primary" })
+
+@Html.Label("Adınız:")
+@Html.TextBox("txtAd", "", new { placeholder = "Adınız" })
+
+@Html.TextArea("txtArea", null, 5, 80, new { placeholder = "Özgeçmiş Bilgileriniz" })
+
+<button id="" name="" type="" style="" class=""></button>
+
+@Html.Button("btn02", "button", "Helper Buton Yaptım")
+@Html.Button("btnRenkli", "button", "btn-danger", "Deneme")
+
+@Html.Button("btn04", MyExtensions.ButtonType.button, "btn-warning", "Iptal")
+
+@Html.Button("btn05", MyExtensions.ButtonType.button, "btn-primary", "width:100px;", "Tag Helper Butonu")
+
+@Html.Paragraph("p01", 2, "dashed", "<b>Bu bir htmlhelper ile hazırlanmış bir p tagı paragrafıdır.</b>")
+@Html.Paragraph("p03", 3, "solid",@<text><b>
+        <strong>
+            Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+            Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
+            lorem
+        </strong>
+    </b></text>)
