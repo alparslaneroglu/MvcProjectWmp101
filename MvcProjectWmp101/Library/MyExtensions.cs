@@ -44,12 +44,12 @@ namespace MvcProjectWmp101.Library
                // < p id = "" style = "border:1px solid" > İçine bişey yazalım</ p >
 
         }
-        public static MvcHtmlString Paragraph(this HtmlHelper helper,string id="",int borderSize=1,string borderStyle="solid", Func<object,HelperResult>template=null)
+        public static MvcHtmlString Paragraph(this HtmlHelper helper,string id="",int borderSize=1,string borderStyle="solid", Func<object,HelperResult>template=null) //ne gelirse gelsin heplerresult a çevir.
         {
             string html = string.Format($"<p id='{id}' name='{id}' style='border:{borderSize}px {borderStyle}'>{template.Invoke(null)}</p>");
             return MvcHtmlString.Create(html);
                // < p id = "" style = "border:1px solid" > İçine bişey yazalım</ p >
-
+               // Func kullanırken tetıklemek için ınvoke kullanmak zorundayız.
         }
 
 

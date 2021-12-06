@@ -1,0 +1,43 @@
+﻿@using MvcProjectWmp101.ViewModel
+@model indexViewModel
+@*@model IEnumerable<MvcProjectWmp101.Models.Kisi> //Enumerable sıralabilir bir liste gibi düşünebiliriz.Numaralandırılan liste gibi düşün.
+    @model List<MvcProjectWmp101.Models.Kisi> //burada küçük model şekilde tanıtıyoruz.Aşağıda büyük Model olarak çağırıyoruz.*@
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <b>Ad : </b> @Model.KisiNesnesi.Ad
+    <br />
+    <b>SoyAd : </b> @Model.KisiNesnesi.Soyad
+    <br />
+    <b>Yas : </b> @Model.KisiNesnesi.Yas
+    <br />
+    <b>Adres : </b> @Model.AdresNesnesi.AdresTanimi
+    <br />
+    <b>Sehir : </b> @Model.AdresNesnesi.Sehir
+
+</div>
+
+<div>
+    @using (Html.BeginForm()) // Form
+    {
+        <b>Ad : </b> @Html.TextBoxFor(x => x.KisiNesnesi.Ad)  
+        <br />
+        <b>SoyAd : </b> @Html.TextBoxFor(x => x.KisiNesnesi.Soyad) 
+        <br />
+        <b>Yas : </b> @Html.TextBoxFor(x => x.KisiNesnesi.Yas) 
+        <br />
+        <b>Adres : </b>@Html.TextBoxFor(x => x.AdresNesnesi.AdresTanimi)
+        <br />
+        <b>Sehir : </b> @Html.TextBoxFor(x => x.AdresNesnesi.Sehir) 
+
+        <hr />
+        <input type="submit" value="Gonder" />
+
+    }
+</div>

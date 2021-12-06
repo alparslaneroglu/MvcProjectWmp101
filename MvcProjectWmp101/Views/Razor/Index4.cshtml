@@ -5,3 +5,19 @@
 
 <h2>Index4</h2>
 
+<h3>
+    Url Helper
+</h3>
+
+<a href="@Url.Action("Index","Razor")">Razor Index'e Git</a>
+@* @Url.Action ==> gidilecek action metodunun url linkini verir. *@
+@*@Url.Content()==> Verilen sanal bir yolu url e çevirir. *@
+@* @Url.Encode() ==> Encode ile özel karakterler veya boşluk var ise url hataya düşmemesi için özel kodlara çevrilerek url oluşturulmasına yarar. *@
+
+<hr />
+@Url.Action("Index3")
+<br />
+@Url.Content("~/Razor/Index3") @* "~" bu işaret ile  sistemden bir yolu çekerken normalinde bizim d diskinde bir klasördeki ana dizine ulaşmak için klasördeki yolu alıp ~ buna çeviriyor. Ve yolu buluyor.*@
+<br />
+@Url.Encode("~/Home/Index?arama=onur ağıcı")  @* ~ / ? ğ bunlar özel karakterlerdir.Bundan dolayı sistem hataya dönüşür.Bunları çevirmek için bu yapı ile onları çevirip hata vermesini engelliyor.*@
+<br />

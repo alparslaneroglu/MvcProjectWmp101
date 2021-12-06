@@ -4,4 +4,27 @@
 }
 
 <h2>Index5</h2>
+<h3>
+    http Utility
+</h3>
+<hr />
+@HttpUtility.UrlEncode("htpps://google.com.tr") @*Burada özel karakterleri çevirdik.*@
+<br />
+@HttpUtility.UrlDecode("htpps%3a%2f%2fgoogle.com.tr")  @*Buradada yukarıda çevirdiğimiz özel karakterli halini decode ile düzelttik.*@
+<br />
+@HttpUtility.HtmlEncode("<b>Onur Ağıcı</b>")
+<br />
+@HttpUtility.HtmlDecode("&lt;b&gt;Onur Ağıcı&lt;/b&gt;")
+<br />
+@Html.Raw("<b>Onur Ağıcı</b>") @*Html.Raw içerisindeki html kodunu direkt çalıştırır.Rowun görevi html kodunu olduğu gibi getiriyor. *@
+<br />
+@Html.Raw("&lt;b&gt;Onur Ağıcı&lt;/b&gt;")  @*Burada sadece özel karakterleri çevirip getiriyor.*@
+<br />
+
+@*<script>alert('Merhaba Mvc');</script>*@
+@*@Html.Raw("<script>alert('Merhaba Mvc');</script>")*@
+<br />
+@Html.Raw("<style>h2{color:red}</style>")
+
+
 

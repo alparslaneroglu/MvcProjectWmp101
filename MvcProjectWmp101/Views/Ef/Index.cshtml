@@ -1,0 +1,12 @@
+﻿@using MvcProjectWmp101.Models
+@model IEnumerable<MvcProjectWmp101.Models.Persons> 
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@foreach (var per in Model)
+{
+    @(per.Name+" "+per.SurName)
+<br />
+}
