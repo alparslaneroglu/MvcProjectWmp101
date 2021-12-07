@@ -6,11 +6,10 @@ using System.Web;
 
 namespace MvcProjectWmp101.ViewModel
 {
-    public class indexViewModel
+    public class StdAddViewModel
     {
-        //Birleştiricilik görevi var.
-        public Kisi KisiNesnesi { get; set; }
-        public Adres AdresNesnesi { get; set; }
+        public List<Students> Students { get; set; }
 
+        public List<Classes> Classes { get; set; }
     }
 }

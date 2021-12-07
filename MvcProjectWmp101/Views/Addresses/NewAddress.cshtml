@@ -1,0 +1,48 @@
+﻿@model MvcProjectWmp101.Models.Addresses
+@{
+    ViewBag.Title = "NewAddress";
+}
+
+<h2>NewAddress</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+
+
+        }
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtDescription" , style="width:15%">Description</span>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", placeholder = "Address Description", cols = "30", rows = "10" }) @*Area dedik çünkü çok satıra ihtiyaç var*@
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtCity" , style="width:15%">City</span>
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "City" })
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="txtPersons" , style="width:15%">Persons</span>
+        @Html.DropDownListFor(x => x.Persons.Id, (List<SelectListItem>)ViewBag.persons, new { @class = "form-control", placeholder = "Persons" })
+    </div>
+
+    
+    if (ViewBag.Result != null)
+    {
+
+        <div class="input-group mb-3">
+            @Html.ActionLink("Index'e geri dön", "Index", "Ef", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    else
+    {
+        <div class="input-group mb-3">
+            <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    }
+
+}

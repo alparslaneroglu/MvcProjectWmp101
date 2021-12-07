@@ -6,6 +6,7 @@ using System.Web;
 
 namespace MvcProjectWmp101.Models.Manager
 {
+    //Database ile model arasındaki yapıyı kuruyor.
     public class DatabaseContext : DbContext // oluşturduğumuz tabloların update,delete,select gibi ifadeleri yakalamamızı sağlayan yapıyı oluşturcak. DbContext sınıfından miras aldık.
     {
         public DbSet<Persons> Persons { get; set; }
