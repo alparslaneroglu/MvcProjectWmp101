@@ -12,10 +12,13 @@ namespace MvcProjectWmp101.Models.Manager
         public DbSet<Persons> Persons { get; set; }
         public DbSet<Addresses> Addresses { get; set; }
 
-        public DatabaseContext() 
+        public DatabaseContext()
         {
             Database.SetInitializer(new DatabaseCreator());
+
+
         }
+     
 
     }
 
@@ -26,6 +29,8 @@ namespace MvcProjectWmp101.Models.Manager
         {
             base.InitializeDatabase(context);
         }
+
+
         //Seed Database ==> Database oluştuktan sonra eklenmesi gereken işlemler için kullanılır.
         protected override void Seed(DatabaseContext context)
         {

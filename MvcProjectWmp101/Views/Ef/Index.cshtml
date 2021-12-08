@@ -1,5 +1,5 @@
 ﻿@using MvcProjectWmp101.Models
-@*@model IEnumerable<MvcProjectWmp101.Models.Persons>*@ 
+@*@model IEnumerable<MvcProjectWmp101.Models.Persons>*@
 @model MvcProjectWmp101.ViewModel.PerAddViewModel
 @{
     ViewBag.Title = "Index";
@@ -13,9 +13,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div>
-                @Html.ActionLink("Add Person", "NewPerson", "Persons", null, new {@class="btn btn-primary"})
+                @Html.ActionLink("Add Person", "NewPerson", "Persons", null, new { @class = "btn btn-primary" })
             </div>
             <br />
             <br />
@@ -24,14 +24,19 @@
                     <i class="bi bi-people" style="color:yellow"></i>Persons
                 </li>
                 @foreach (var per in Model.Persons)
-                {
-                    <li class="list-group-item ">
-                        <i class="bi bi-people" style="color:lightslategrey"></i>@(per.Name+" " +per.SurName)(<i>@per.Age</i>)
-</li>
-                }
+                    {
+                        <li class="list-group-item ">
+                            <i class="bi bi-people" style="color:lightslategrey"></i>@(per.Name+" " +per.SurName)(<i>@per.Age</i>)
+
+                            <div class="float-end">
+                                @Html.ActionLink("Update", "Update", "Persons", new {pid=@per.Id}, new { @class = "btn btn-primary btn-sm" })
+                                @Html.ActionLink("Delete", "Delete", "Persons", new { pid = @per.Id } /*Yukarda url yanına ıd'yi getiriyor.*/, new { @class = "btn btn-danger btn-sm" })
+                            </div>
+                        </li>
+                    }
             </ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div>
                 @Html.ActionLink("Add Address", "NewAddress", "Addresses", null, new { @class = "btn btn-primary" })
             </div>
@@ -45,6 +50,10 @@
                 {
                     <li class="list-group-item ">
                         <i class="bi bi-house-fill" style="color:gray"></i> @adr.Description <i class="fas fa-city" style="color:lightslategrey"></i> @adr.City (<i>@(adr.Persons.Name + " " + adr.Persons.SurName)</i>)
+                        <div class="float-end">
+                            @Html.ActionLink("Update", "Update", "Addresses", new { aid = @adr.Id, pid = @adr.Persons.Id }, new { @class = "btn btn-primary btn-sm" })
+                            @Html.ActionLink("Delete", "Delete", "Addresses", new { aid = @adr.Id }, new { @class = "btn btn-danger btn-sm" })
+                        </div>
                     </li>
                 }
             </ul>

@@ -1,9 +1,10 @@
 ﻿@model MvcProjectWmp101.Models.Addresses
+
 @{
-    ViewBag.Title = "NewAddress";
+    ViewBag.Title = "Update";
 }
 
-<h2>NewAddress</h2>
+<h2>Update</h2>
 
 @using (Html.BeginForm())
 {
@@ -25,12 +26,22 @@
         <span class="input-group-text" id="txtCity" , style="width:15%">City</span>
         @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "City" })
     </div>
+    //foreach (var item in (List<SelectListItem>)ViewBag.persons)
+    //{
+    //    if (item.Value== Model.Persons.Id.ToString())
+    //    {
+    //        item.Selected = true;
+    //        break;
+    //    }
+    //}
+
+
     <div class="input-group mb-3">
         <span class="input-group-text" id="txtPersons" , style="width:15%">Persons</span>
         @Html.DropDownListFor(x => x.Persons.Id, (List<SelectListItem>)ViewBag.persons, new { @class = "form-control", placeholder = "Persons" })
     </div>
 
-    
+
     if (ViewBag.Result != null)
     {
 

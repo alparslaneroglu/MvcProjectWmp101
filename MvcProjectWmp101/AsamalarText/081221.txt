@@ -1,0 +1,20 @@
+﻿önce efcontroller indexe person için update ve delete butonları (@ActionLink) ekleniyor.
+Persons controller değişiklikleri update oluşturuyoruz sonra update view oluşturuyoruz.
+ActionLink içerisinde routevalues kısmını yazdık.(pid=@per.id) yazdık pid burda oluşturduk PersonsControllerde kullanıyoruz.
+PersonControllerd da Update içerisini controllerda doldurduk.
+Sonra update view 'e gidip Update.cshtml içerisinde değişiklikleri yapıyoruz.
+PersonsController dan return View(per); ile bilgiler taşınıyor.
+PersonsController da Updateiçin HttpPost oluşturuyoruz.Bu sırada model'e değiştirdiğimiz bütün bilgiler geliyor fakat Id gelmiyor bunun için Update view de  @Html.HiddenFor(x=>x.Id) bunu yazarak arka planda gizli bir şekilde Id getiriyoruz ve artık sorun kalmıyor.Bu bir çözümdür.
+Sonrasında Http postu oluşturup ActionResult ını yazdık.
+AddressesControllerde update için get kısmını oluşturuyoruz.DropdownList olarak çalıştığı için Personscontrollerdan farklı olarak linq yapısıda içine yazılıyor.
+Ef nin indexine giderek adres için update ve delete butonları ekleniyor
+Actionlink içerisinde raoutevalues kısmını yazdık.new { aid = @adr.Id } yarak aid burda oluşturduk ve bunu artık AddressesController da kullanıyoruz.
+Bundan sonra address için update view ekledik ve içerisini NewAddress.cshtml içerisinden kopyaladık.
+Update view içersine dropdownlist üzerine foreach yapısı oluşturarak seçtiğimiz ismin update sayfasında name kısmına isminin gelmesini sağladık.
+Updateview içerisinde foreach yapısını dropdownlistden önce yazmamızın sebebi kod çalışırken önce bilgileri tutsun sonra viewbage aşağıda atalım.Bu bir çözüm yoludur.Bunun yerine farklı bir yol izledik kod içerisinde
+Daha sonra Addresscontrollerda update için httppost oluşturduk.
+
+Personscontrollerda ActionResult Delete oluşturuyoruz ve dolduruyoruz.
+Ondan sonra Delete için View oluturuyoruz.Ve içerisini dolduruyoruz.
+Bundan sonra Delete için HTTPPost yapısını oluşturuyoruz PersonControllerde da.
+

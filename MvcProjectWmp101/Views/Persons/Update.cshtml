@@ -1,12 +1,14 @@
 ﻿@model MvcProjectWmp101.Models.Persons
+
 @{
-    ViewBag.Title = "NewPerson";
+    ViewBag.Title = "Update";
 }
 
-<h2>NewPerson</h2>
+<h2>Update</h2>
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(x=>x.Id)
     <div class="input-group">
         @if (ViewBag.Result != null)
         {
@@ -18,7 +20,7 @@
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text" id="txtName" , style="width:15%">Name</span>
-        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Person Name" }) @*Veritabanından bilgi alıyoruz.Database ile ilgili veriçeceksek veya göndereceksek forlu yapıları kullanırız.*@
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Person Name" }) 
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text" id="txtSurName" , style="width:15%">SurName</span>
@@ -30,7 +32,7 @@
     </div>
 
 
-    if (ViewBag.Result!=null)
+    if (ViewBag.Result != null)
     {
 
         <div class="input-group mb-3">
@@ -40,7 +42,7 @@
     else
     {
         <div class="input-group mb-3">
-            <input type="submit" value="Save" class="btn btn-success" />
+            <input type="submit" value="Update" class="btn btn-primary" />
         </div>
     }
 
