@@ -18,7 +18,23 @@ namespace MvcProjectWmp101.Models.Manager
 
 
         }
-     
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Persons>()
+                .MapToStoredProcedures(config =>
+                {
+                    config.Insert(i => i.HasName("PersonsInsertSP"));
+                    config.Update(u => u.HasName("PersonsUpdateSP"));
+                    config.Delete(d => d.HasName("PersonsDeleteSP"));
+                });                                     
+            modelBuilder.Entity<Addresses>()
+                .MapToStoredProcedures(config =>
+                {
+                    config.Insert(i => i.HasName("AddressesInsertSP"));
+                    config.Update(u => u.HasName("AddressesUpdateSP"));
+                    config.Delete(d => d.HasName("AddressesDeleteSP"));
+                });
+        }
 
     }
 

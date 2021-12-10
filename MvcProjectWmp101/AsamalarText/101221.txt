@@ -1,0 +1,3 @@
+﻿Önce StoredProcudes leri oluşturduk Databasecontext içerisinde.Sonra database si silip baştan programı çalıştırdık.
+Daha sonra database içerisinde adres ve person ınsert stored içlerine _sp ekleyerek city ve name in yanına çalışıp çalışmadığını kontrol ediyoruz.
+storedprocess ile birlikte her sql projesınde normalde her işlemde bir execute plan oluşturuluyor.Bu işlemle birlikte sürekli bu plana gerek yok diyip gerekli işlemleri yapıyoruz.

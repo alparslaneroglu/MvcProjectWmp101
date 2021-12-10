@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AsamalarText\081221.txt" />
+    <Content Include="AsamalarText\101221.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
